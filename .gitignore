@@ -29,3 +29,4 @@ Output/
 scalar_EMT.sched
 
 build/
+.vscode/
