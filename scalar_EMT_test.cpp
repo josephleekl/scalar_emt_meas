@@ -138,6 +138,9 @@ int main(int argc, char** argv) {
 		wilson_twopt_par_dir0[i].op.push_back(std::make_pair("emtc_0_0", "wilson_"+PIflowtimes[i]+"_trphi_2"));
 		wilson_twopt_par_dir1[i].op.push_back(std::make_pair("emtc_1_1", "wilson_"+PIflowtimes[i]+"_trphi_2"));
 		wilson_twopt_par_dir2[i].op.push_back(std::make_pair("emtc_2_2", "wilson_"+PIflowtimes[i]+"_trphi_2"));
+        wilson_twopt_par_dir0[i].op.push_back(std::make_pair("trphi_2", "wilson_"+PIflowtimes[i]+"_trphi_2"));
+		wilson_twopt_par_dir1[i].op.push_back(std::make_pair("trphi_2", "wilson_"+PIflowtimes[i]+"_trphi_2"));
+		wilson_twopt_par_dir2[i].op.push_back(std::make_pair("trphi_2", "wilson_"+PIflowtimes[i]+"_trphi_2"));
 
 		if (par.configPar.L == 64)
 		{
