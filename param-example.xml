@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<grid>
+    <trajPar>
+        <start>50</start>
+        <end>200</end>
+        <step>50</step>
+    </trajPar>
+    <IOPar>
+        <runName>id</runName>
+        <outputStem>outpath</outputStem>
+        <scheduleFile></scheduleFile>
+        <configFile>config/cosmhol-su2_L32_g0.3_m2-0.091_80steps_ckpoint_lat</configFile>
+    </IOPar>
+    <ConfigPar>
+        <g>0.1</g>
+        <m2>-0.091</m2>
+        <L>64</L>
+        <N>2</N>
+    </ConfigPar>
+</grid>

@@ -2,7 +2,7 @@
 #include <Hadrons/Application.hpp>
 #include <Hadrons/Modules.hpp>
 
-#include "Input_Params_test.h"
+#include "Input_Params.h"
 #include "Utils.cpp"
 
 
@@ -116,7 +116,7 @@ int main(int argc, char** argv) {
 	application.createModule<MScalarSUN::EMTSU2>("emtc", emtcpar);
 
 
-	//Measurement: wilson flowtime for loop
+	//Measurement: wilson flowtime 
 	vector<MScalarSUN::WilsonFlowSU2::Par>   wilson_field_par(PIflowtimes.size());
 	vector<MScalarSUN::TrPhiSU2::Par>        wilson_trphi_par(PIflowtimes.size());	
  	vector<MScalarSUN::TwoPointSU2::Par> wilson_twopt_par_dir0(PIflowtimes.size());
@@ -127,7 +127,7 @@ int main(int argc, char** argv) {
 	 for (int i=0; i<PIflowtimes.size(); i++)
 	{
 		wilson_field_par[i].field = "phi"; 
-		wilson_field_par[i].flowtime = pow(stod(PIflowtimes[i]) * par.configPar.g , 2);
+		wilson_field_par[i].flowtime = pow(stod(PIflowtimes[i]) * par.configPar.g , -2);
 		application.createModule<MScalarSUN::WilsonFlowSU2>("wilson_"+PIflowtimes[i]+"_phi", wilson_field_par[i]);
 
 		wilson_trphi_par[i].field = "wilson_"+PIflowtimes[i]+"_phi";
@@ -145,35 +145,15 @@ int main(int argc, char** argv) {
 		if (par.configPar.L == 64)
 		{
 			wilson_twopt_par_dir0[i].mom.push_back("1 0");
-			wilson_twopt_par_dir0[i].mom.push_back("2 0");
-			wilson_twopt_par_dir0[i].mom.push_back("3 0");
 			wilson_twopt_par_dir1[i].mom.push_back("0 1");
-			wilson_twopt_par_dir1[i].mom.push_back("0 2");
-			wilson_twopt_par_dir1[i].mom.push_back("0 3");
 		} else if (par.configPar.L == 128) 
 		{
 			wilson_twopt_par_dir0[i].mom.push_back("2 0");
-			wilson_twopt_par_dir0[i].mom.push_back("3 0");
-			wilson_twopt_par_dir0[i].mom.push_back("4 0");
-			wilson_twopt_par_dir0[i].mom.push_back("5 0");
-			wilson_twopt_par_dir0[i].mom.push_back("6 0");
 			wilson_twopt_par_dir1[i].mom.push_back("0 2");
-			wilson_twopt_par_dir1[i].mom.push_back("0 3");
-			wilson_twopt_par_dir1[i].mom.push_back("0 4");
-			wilson_twopt_par_dir1[i].mom.push_back("0 5");
-			wilson_twopt_par_dir1[i].mom.push_back("0 6");
 		} else if (par.configPar.L == 256) 
 		{
 			wilson_twopt_par_dir0[i].mom.push_back("4 0");
-			wilson_twopt_par_dir0[i].mom.push_back("6 0");
-			wilson_twopt_par_dir0[i].mom.push_back("8 0");
-			wilson_twopt_par_dir0[i].mom.push_back("10 0");
-			wilson_twopt_par_dir0[i].mom.push_back("12 0");
 			wilson_twopt_par_dir1[i].mom.push_back("0 4");
-			wilson_twopt_par_dir1[i].mom.push_back("0 6");
-			wilson_twopt_par_dir1[i].mom.push_back("0 8");
-			wilson_twopt_par_dir1[i].mom.push_back("0 10");
-			wilson_twopt_par_dir1[i].mom.push_back("0 12");
 		}
 		wilson_twopt_par_dir2[i].mom.push_back("0 0");
 

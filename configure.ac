@@ -1,9 +1,9 @@
 AC_PREREQ([2.63])
-AC_INIT(ScalarEMT,[v1.0],[joseph.lee@ed.ac.uk],[ScalarEMT])
+AC_INIT(ScalarEMTmeas,[v1.0],[joseph.lee@ed.ac.uk],[ScalarEMTmeas])
 AC_CANONICAL_BUILD
 AC_CANONICAL_HOST
 AC_CANONICAL_TARGET
-AC_CONFIG_SRCDIR([scalar_EMT.cpp])
+AC_CONFIG_SRCDIR([scalar_EMT_meas.cpp])
 AC_CONFIG_HEADERS([config.h])
 AC_CONFIG_MACRO_DIR([.buildutils/m4])
 AM_INIT_AUTOMAKE([-Wall -Werror foreign subdir-objects])
