@@ -3,7 +3,6 @@
 #include <Hadrons/Modules.hpp>
 
 #include "Input_Params.h"
-#include "Utils.cpp"
 
 
 using namespace std;
