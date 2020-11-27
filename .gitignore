@@ -18,7 +18,7 @@ depcomp
 install-sh
 missing
 
-scalar_EMT.o
+scalar_EMT_meas.o
 config.h
 config.h.in
 stamp-h1
@@ -26,7 +26,7 @@ stamp-h1
 Input/
 Results/
 Output/
-scalar_EMT.sched
+scalar_EMT_meas.sched
 
 build/
 .vscode/
